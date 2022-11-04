@@ -1,0 +1,23 @@
+{
+    "name": "js-testing",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "lint": "eslint ."
+    },
+    "keywords": [],
+    "author": "Cristian Martí",
+    "license": "ISC",
+    "homepage": "https://github.com/XistriXostri/week-1#readme",
+    "prettier": {
+        "singleQuote": true
+    },
+    "devDependencies": {
+        "eslint": "^8.26.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.26.0",
+        "husky": "^8.0.1"
+    }
+}
