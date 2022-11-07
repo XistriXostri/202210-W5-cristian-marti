@@ -6,7 +6,8 @@
     "type": "module",
     "scripts": {
         "lint": "eslint .",
-        "test": "jest --watchAll"
+        "test": "jest --watchAll --coverage",
+        "test:prod": "jest --watchAll --coverage --watchAll=false"
     },
     "keywords": [],
     "author": "Cristian Martí",
