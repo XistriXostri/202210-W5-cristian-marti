@@ -34,7 +34,7 @@ var jumpToCode = (function init() {
         missingCoverageElements.item(index).scrollIntoView({
             behavior: 'smooth',
             block: 'center',
-            inline: 'center'
+            inline: 'center',
         });
     }
 
@@ -85,3 +85,4 @@ var jumpToCode = (function init() {
     };
 })();
 window.addEventListener('keydown', jumpToCode);
+
