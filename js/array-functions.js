@@ -39,7 +39,6 @@ export function arrayShift(array) {
 //función unshift
 export function arrayUnshift(array, element) {
     let newArray = [];
-    if (arrayLength(array) < 1) return undefined;
     newArray[0] = element;
     for (let i = 0; i < arrayLength(array); i++) {
         newArray[i + 1] = array[i];
@@ -57,10 +56,43 @@ export function arraySome(array, element) {
 
 //función every
 export function arrayEvery(array, element) {
-    let every = false;
+    if (arrayLength(array) < 1) return false;
     for (let i = 0; i < arrayLength(array); i++) {
-        if (array[i] === element) every = true;
-        else every = false;
+        if (array[i] !== element) return false;
     }
-    return every;
+    return true;
+}
+
+//función find
+export function arrayFind(array, element) {
+    if (arraySome(array, element)) return element;
+    return undefined;
+}
+
+//función filter
+export function arrayFilter(array, element) {
+    let newArray = [];
+    for (let i = 0; i < arrayLength(array); i++) {
+        if (array[i] === element) {
+            arrayPush(newArray, element);
+        }
+    }
+    return newArray;
+}
+
+//función map -> no consigo como hacerlo
+// export function arrayMap(array, property) {
+//     let newArray = [];
+//     array.forEach((element) => {
+//         arrayPush(newArray, property(element));
+//     });
+//     return newArray;
+// }
+
+//función findIndex
+export function arrayFindIndex(array, element) {
+    for (let i = 0; i < arrayLength(array); i++) {
+        if (array[i] === element) return i;
+    }
+    return -1;
 }
