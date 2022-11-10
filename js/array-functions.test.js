@@ -8,7 +8,6 @@ import {
     arrayEvery,
     arrayFind,
     arrayFilter,
-    //arrayMap,
     arrayFindIndex,
     arrayJoin,
 } from './array-functions';
@@ -235,25 +234,6 @@ describe('Given arrayFilter function', () => {
         });
     });
 });
-
-// arrayMap
-// describe('Given arrayFilter function', () => {
-//     const givenAndExpectedCases = [
-//         {
-//             givenArray: [1, 2, 3],
-//             givenElementToAdd: double,
-//             expected: [2, 4, 6],
-//         },
-//     ];
-
-//     givenAndExpectedCases.forEach((it) => {
-//         test(`The result of map ${it.givenElementToAdd} on ${it.givenArray} should be ${it.expected}`, () => {
-//             expect(
-//                 arrayMap(it.givenArray, it.givenElementToAdd)
-//             ).toStrictEqual(it.expected);
-//         });
-//     });
-// });
 
 // arrayFindIndex
 describe('Given arrayFindIndex function', () => {

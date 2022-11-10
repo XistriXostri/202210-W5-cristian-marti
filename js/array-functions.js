@@ -80,15 +80,6 @@ export function arrayFilter(array, element) {
     return newArray;
 }
 
-//función map -> no consigo como hacerlo
-// export function arrayMap(array, property) {
-//     let newArray = [];
-//     array.forEach((element) => {
-//         arrayPush(newArray, property(element));
-//     });
-//     return newArray;
-// }
-
 //función findIndex
 export function arrayFindIndex(array, element) {
     for (let i = 0; i < arrayLength(array); i++) {
