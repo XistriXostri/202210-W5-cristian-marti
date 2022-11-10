@@ -96,3 +96,19 @@ export function arrayFindIndex(array, element) {
     }
     return -1;
 }
+
+//función join
+export function arrayJoin(array, element) {
+    let outputString = '';
+    for (let i = 0; i < arrayLength(array); i++) {
+        let elementToPush = '';
+        if (array[i] !== null && array[i] !== undefined) {
+            elementToPush = array[i].toString();
+        }
+        if (i < arrayLength(array) - 1) {
+            elementToPush = elementToPush + element;
+        }
+        outputString = outputString + elementToPush;
+    }
+    return outputString;
+}

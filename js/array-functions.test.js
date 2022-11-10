@@ -10,6 +10,7 @@ import {
     arrayFilter,
     //arrayMap,
     arrayFindIndex,
+    arrayJoin,
 } from './array-functions';
 
 // arrayLength
@@ -274,6 +275,45 @@ describe('Given arrayFindIndex function', () => {
         test(`The result of find ${it.givenElementToAdd} on ${it.givenArray} should be ${it.expected}`, () => {
             expect(
                 arrayFindIndex(it.givenArray, it.givenElementToAdd)
+            ).toStrictEqual(it.expected);
+        });
+    });
+});
+
+// arrayJoin
+describe('Given arrayJoin function', () => {
+    const givenAndExpectedCases = [
+        {
+            givenArray: ['a', 'b', 'c'],
+            givenElementToAdd: ', ',
+            expected: 'a, b, c',
+        },
+        {
+            givenArray: [1, 2, 3],
+            givenElementToAdd: '-',
+            expected: '1-2-3',
+        },
+        {
+            givenArray: ['a', 'b'],
+            givenElementToAdd: '',
+            expected: 'ab',
+        },
+        {
+            givenArray: ['a', null],
+            givenElementToAdd: '-',
+            expected: 'a-',
+        },
+        {
+            givenArray: [undefined, 'b'],
+            givenElementToAdd: '-',
+            expected: '-b',
+        },
+    ];
+
+    givenAndExpectedCases.forEach((it) => {
+        test(`The result of join ${it.givenElementToAdd} on ${it.givenArray} should be ${it.expected}`, () => {
+            expect(
+                arrayJoin(it.givenArray, it.givenElementToAdd)
             ).toStrictEqual(it.expected);
         });
     });

@@ -1,14 +1,14 @@
-//función length
-// export function arrayLength(array) {
-//     let i = 0;
-//     while (
-//         array[i] !== undefined ||
-//         (array[i] === undefined && array[i + 1] !== undefined)
-//     ) {
-//         i++;
-//     }
-//     return i;
-// }
+// función length
+export function arrayLength(array) {
+    let i = 0;
+    while (
+        array[i] !== undefined ||
+        (array[i] === undefined && array[i + 1] !== undefined)
+    ) {
+        i++;
+    }
+    return i;
+}
 
 // //función push
 // export function arrayPush(array, element) {
@@ -50,32 +50,36 @@
 // const y = [1, 2];
 // console.log(y.length);
 
-// const arrayCaseFindIndex = [
-//     [[1, 'a', 2, 3], 'a', 1],
-//     [[1, 'a', 2], 1, 0],
-//     [[1, 2], 'a', -1],
-//     [[1, 2, 1, 3], 1],
-// ];
-
-// for (let i = 0; i < arrayCaseFindIndex.length; i++) {
-//     let arr = arrayCaseFindIndex[i][0];
-//     let elem = arrayCaseFindIndex[i][1];
-//     console.log('Array inicial: ' + arr + ' + ' + elem);
-//     const arrf = arr.findIndex((a) => a === elem);
-//     console.log('Resultado esperado: ' + arrf);
-//     //const arrp = arrayFindIndex(arr, elem);
-//     //console.log('Resultado: ' + arrp);
-//     console.log('------------------------------');
-// }
-
-const arr = [
-    [[1, 2], this[0][0].length],
-    [[1, 2, 3], 2],
-    [[1, 2, 3, 4], 2],
-];
-
-for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i][0] + ' es ' + arr[i][1] + ' length');
+//función join
+export function arrayJoin(array, element) {
+    let outputString = '';
+    for (let i = 0; i < arrayLength(array); i++) {
+        let elementToPush = '';
+        if (array[i] !== null || array[i] !== undefined) {
+            elementToPush = array[i].toString();
+        }
+        if (i < arrayLength(array) - 1) {
+            elementToPush = elementToPush + element;
+        }
+        outputString = outputString + elementToPush;
+    }
+    return outputString;
 }
 
-console.log(arr[0][0].length);
+const arrayCaseFindIndex = [
+    [[1, 2], ', ', 1],
+    [[1, null, 2], ', ', 0],
+    [[1, undefined], '-', -1],
+    [[1, undefined, 3], '-'],
+];
+
+for (let i = 0; i < arrayCaseFindIndex.length; i++) {
+    let arr = arrayCaseFindIndex[i][0];
+    let elem = arrayCaseFindIndex[i][1];
+    console.log('Array inicial: ' + arr + ' + ' + elem);
+    const arrf = arr.join(elem);
+    console.log('Resultado esperado: ' + arrf);
+    const arrp = arrayJoin(arr, elem);
+    console.log('Resultado: ' + arrp);
+    console.log('------------------------------');
+}
